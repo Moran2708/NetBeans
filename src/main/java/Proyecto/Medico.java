@@ -27,7 +27,7 @@ public class Medico {
         s.nextLine();
         System.out.println("Digite Apellido: ");
         this.Apellido = s.nextLine();
-        System.out.println("Digite Nombre: ");
+        System.out.println("Digite Nombre:  ");
         this.Nombre = s.nextLine();
         //Ubicacion de Internacion.
         System.out.println("Digite su Especialidad: ");
