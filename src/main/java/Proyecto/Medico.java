@@ -21,7 +21,7 @@ public class Medico {
 
     public void Registrar_Medico() {
         System.out.println("-------REGISTRAR NUEVO MEDICO-------");
-        System.out.println("Digite sun Nmro. de Id: ");
+        System.out.println("Digite sun Nmro. de Id:  ");
         this.Id = s.nextInt();
         //Limpieza de Buffer
         s.nextLine();
