@@ -14,18 +14,19 @@ public class Principal_Paciente {
         Operaciones_Medico med = new Operaciones_Medico();
         Operaciones_Hospital hosp = new Operaciones_Hospital();
         do {
-            System.out.println("-----MENÚ DE OPCIONES-----");
+            System.out.println("------------------MENÚ DE OPCIONES-------------------");
             System.out.println("1-Registrar Medico");
             System.out.println("2-Lista de Medicos");
             System.out.println("3-Buscar Medico");
             System.out.println("4-Registrar Paciente");
             System.out.println("5-Listar Pacientes");
-            System.out.println("6-Listado por Genero");
+            System.out.println("6-Listado de Pacientes por Genero");
             System.out.println("7-Buscar Paciente");
-            System.out.println("10-Salir");
+            System.out.println("8-Eliminar Paciente");
+            System.out.println("9-Salir");
             opc = s.nextInt();
             s.nextLine();
-
+            System.out.println("-----------------------------------------------------");
             switch (opc) {
                 case 1:
                     med.Registrar_Medico();
@@ -59,11 +60,9 @@ public class Principal_Paciente {
                     break;
 
                 case 8:
-
-                    break;
-
-                case 9:
-
+                    System.out.println("Paciente a Eliminar: ");
+                    int pac = s.nextInt();
+                    obj.Eliminar_Paciente(pac);
                     break;
 
                 default:

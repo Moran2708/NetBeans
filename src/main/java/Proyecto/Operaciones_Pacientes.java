@@ -22,14 +22,19 @@ public class Operaciones_Pacientes {
         //Adicionando Paciente a la Lista
         ListaPaciente.add(paciente);
         System.out.println("Paciente Registrado");
-        System.out.println("--------------------------------------------");
+        System.out.println("-----------------------------------------------------");
     }
 
     //Listando Pacientes
     public void Listado_De_Pacientes() {
-        for (Pacientes paciente : ListaPaciente) {
-            paciente.Mostrar_Datos();
+        if (ListaPaciente.size() < 1) {
+            System.out.println("No hay Pacientes Registrados");
+        }else{
+            for (Pacientes paciente : ListaPaciente) {
+                paciente.Mostrar_Datos();
+            }
         }
+        
     }
 
     //Pacientes por Genero
@@ -55,5 +60,11 @@ public class Operaciones_Pacientes {
         if (sw == 0) {
             System.out.println("El paciente no esta registrado");
         }
+    }
+
+    public void Eliminar_Paciente(int pac) {
+        ListaPaciente.remove(pac);
+        System.out.println("Paciente Eliminado.");
+        System.out.println("-----------------------------------------------------");
     }
 }

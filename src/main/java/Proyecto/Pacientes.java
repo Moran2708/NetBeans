@@ -19,6 +19,8 @@ public class Pacientes {
     private String UbicIntern;
     ArrayList<String> ListaSint;
 
+    Hospital hosp = new Hospital();
+
     // Constructores
     public Pacientes() {
         ListaSint = new ArrayList<>();
@@ -27,8 +29,7 @@ public class Pacientes {
     //Metodos
     public void Llenar_Datos() {
         String res = "S";
-
-        System.out.println("-------REGISTRO DE PACIENTE-------");
+        System.out.println("----------------REGISTRO DE PACIENTE-----------------");
         System.out.println("Digite sun Nmro. de Cedula: ");
         this.NumCed = s.nextInt();
         //Limpieza de Buffer
@@ -46,17 +47,21 @@ public class Pacientes {
         //Ubicacion de Internacion.
         System.out.println("Digite el Hospital en el cual sera Internado: ");
         this.UbicIntern = s.nextLine();
-        System.out.println("-----SINTOMAS-----");
+        System.out.println("-----------------------------------------------------");
+        System.out.println("----------------------SINTOMAS-----------------------");
         do {
             System.out.println("Digite Sintomas del paciente: ");
             ListaSint.add(s.nextLine());
             System.out.println("Desea añadir mas sintomas? (S/N)");
             res = s.nextLine();
         } while (res.equalsIgnoreCase("S"));
+        hosp.Llenar_Datos_Hospital();
     }
 
     public void Mostrar_Datos() {
-        System.out.println("--------------------------------------------");
+        int i = 1;
+
+        System.out.println("-----------------------------------------------------");
         System.out.println("Numero de Cedula: " + this.NumCed);
         System.out.println("Paterno: " + this.Paterno);
         System.out.println("Materno: " + this.Materno);
@@ -64,12 +69,12 @@ public class Pacientes {
         System.out.println("Genero: " + this.Genero);
         System.out.println("Fecha de Nacimiento: " + this.FechaNac);
         System.out.println("Hospital de Internacion: " + this.UbicIntern);
-        System.out.println("--------------------------------------------");
-        System.out.println("-----SINTOMAS-----");
+        System.out.println("----------------------SINTOMAS-----------------------");
         for (String sin : ListaSint) {
-            System.out.println(" " + sin);
-            System.out.println("--------------------------------------------");
+            System.out.println((i++) + "- " + sin);
         }
+        hosp.Mostrar_Datos_Hosp();
+        System.out.println("--------------------------------------------");
     }
 
     //Getters y Setters

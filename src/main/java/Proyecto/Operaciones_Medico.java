@@ -19,13 +19,18 @@ public class Operaciones_Medico {
         //Adicionando Paciente a la Lista
         ListaMed.add(med);
         System.out.println("Medico Registrado.");
-        System.out.println("--------------------------------------------");
+        System.out.println("-----------------------------------------------------");
     }
 
     public void Listado_De_Medicos() {
-        for (Medico med : ListaMed) {
-            med.Mostrar_Medicos();
+        if (ListaMed.size() < 1) {
+            System.out.println("No hay Medicos Registrados...");
+        } else {
+            for (Medico med : ListaMed) {
+                med.Mostrar_Medicos();
+            }
         }
+
     }
 
     public void Buscar_Med(int Id) {
@@ -40,20 +45,4 @@ public class Operaciones_Medico {
             System.out.println("Ningun Medico con Nro de ID: " + Id);
         }
     }
-
-//    public void Eliminar_Med(int Elim) {
-//        int sw = 0;
-//        for (Medico med : ListaMed) {
-//            if (med.getId() == Elim) {
-//                sw = 1;
-//                med.ListaMed.remove(Elim);
-//            }
-//        }
-//        if (sw == 0) {
-//            System.out.println("Ningun Medico con Nro de ID: " + Elim);
-//        }
-//        for (Medico med : ListaMed) {
-//            med.Mostrar_Medicos();
-//        }
-//    }
 }

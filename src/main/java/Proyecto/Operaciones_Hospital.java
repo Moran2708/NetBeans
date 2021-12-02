@@ -14,17 +14,22 @@ public class Operaciones_Hospital {
         ListaHospPac = new ArrayList<>();
     }
 
-    public void Registrar_Datos() {
+/*    public void Registrar_Datos() {
         Hospital hosp = new Hospital();
-        hosp.Llenar_Datos_Hosp();
+        hosp.Llenar_Datos_Hospital();
         //Adicionando Paciente a la Lista
         ListaHospPac.add(hosp);
+        System.out.println("Datos Guardados.");
+        System.out.println("-----------------------------------------------------");
     }
-    
-    public void Mostrar_Datos_Hosp(){
-        System.out.println(hosp.getHosp()); 
-        hosp.Mostrar_Datos();
-    }
+
+    public void Mostrar_Datos_Hosp() {
+        for (Hospital hosp : ListaHospPac) {
+            System.out.println(hosp.getNombreHosp());
+            hosp.Mostrar_Datos_Hosp();
+        }
+
+    }*/
 
     public List<Hospital> getListaHospPac() {
         return ListaHospPac;
@@ -33,5 +38,5 @@ public class Operaciones_Hospital {
     public void setListaHospPac(List<Hospital> ListaHospPac) {
         this.ListaHospPac = ListaHospPac;
     }
-    
+
 }

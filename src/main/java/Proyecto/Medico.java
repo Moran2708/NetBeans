@@ -14,13 +14,14 @@ public class Medico {
     private String Espec;
 
     ArrayList<String> ListaHosp;
+    Hospital hosp = new Hospital();
 
     public void Medico() {
         ListaHosp = new ArrayList<>();
     }
 
     public void Registrar_Medico() {
-        System.out.println("-------REGISTRAR NUEVO MEDICO-------");
+        System.out.println("---------------REGISTRAR NUEVO MEDICO---------------");
         System.out.println("Digite sun Nmro. de Id:  ");
         this.Id = s.nextInt();
         //Limpieza de Buffer
@@ -30,17 +31,18 @@ public class Medico {
         System.out.println("Digite Nombre:  ");
         this.Nombre = s.nextLine();
         //Ubicacion de Internacion.
-        System.out.println("Digite su Especialidad: ");
+        System.out.println("Especialidad: ");
         this.Espec = s.nextLine();
+        hosp.Llenar_Datos_Hospital_PMed();
     }
 
     public void Mostrar_Medicos() {
-        System.out.println("--------------------------------------------");
         System.out.println("Id de Medico: " + this.Id);
         System.out.println("Apellido: " + this.Apellido);
         System.out.println("Nombre: " + this.Nombre);
         System.out.println("Especialidad: " + this.Espec);
-        System.out.println("--------------------------------------------");
+        hosp.Mostrar_Datos_Hosp_PMed();
+        System.out.println("-----------------------------------------------------");
     }
 
     public int getId() {

@@ -1,49 +1,104 @@
 package Proyecto;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Hospital {
 
-    Pacientes pac = new Pacientes();
     Scanner s = new Scanner(System.in);
-    private String Hosp;
-    ArrayList<String> ListaHospPac;
 
-    public Hospital() {
-        ListaHospPac = new ArrayList<>();
+    //Atributos
+    private String nombreHosp;
+    private String nombrePiso;
+    private int numPiso;
+    private String nombreEdif;
+    private int numSala;
+
+    //Metodos
+    public void Llenar_Datos_Hospital() {
+        System.out.println("------------------REGISTRO HOSPITAL------------------");
+        System.out.println("Digite el nombre del hospital");
+        this.nombreHosp = s.nextLine();
+        System.out.println("Digite el nombre del piso donde esta siendo atendido");
+        this.nombrePiso = s.nextLine();
+        System.out.println("Digite el nro. del piso donde esta siendo atendido");
+        this.numPiso = s.nextInt();
+        s.nextLine();
+        System.out.println("Digite el nombre del edificio");
+        this.nombreEdif = s.nextLine();
+        System.out.println("Digite el numero de la Sala");
+        this.numSala = s.nextInt();
     }
 
-    public void Llenar_Datos_Hosp() {
-        String res = "S";
-        System.out.println("Ingrese el Nombre del Hospital: ");
-        this.Hosp = s.nextLine();
-        do {
-            System.out.println("-----------------------------------");
-            pac.Llenar_Datos();
-            System.out.println("Desea Ingresar otro paciente? (S/N)");
-            res = s.nextLine();
-        } while (res.equalsIgnoreCase("S"));
+    public void Llenar_Datos_Hospital_PMed() {
+        System.out.println("------------------REGISTRO HOSPITAL------------------");
+        System.out.println("Nombre del hospital");
+        this.nombreHosp = s.nextLine();
+        System.out.println("Nombre de Piso: ");
+        this.nombrePiso = s.nextLine();
+        System.out.println("Piso :");
+        this.numPiso = s.nextInt();
+        s.nextLine();
+        System.out.println("Nombre del edificio");
+        this.nombreEdif = s.nextLine();
+        System.out.println("Numero de la Sala");
+        this.numSala = s.nextInt();
+    }
+
+    public void Mostrar_Datos_Hosp() {
+        System.out.println("Nombre del hospital: " + this.nombreHosp);
+        System.out.println("Nombre del piso donde fue atendido:" + this.nombrePiso);
+        System.out.println("Numero del pisp donde fue atendido: " + this.numPiso);
+        System.out.println("Nombre del edificio: " + this.nombreEdif);
+        System.out.println("Numero de la Sala: " + this.numSala);
     }
     
-    public void Mostrar_Datos(){
-        pac.Mostrar_Datos();
+    public void Mostrar_Datos_Hosp_PMed() {
+        System.out.println("Hospital: " + this.nombreHosp);
+        System.out.println("Nombre del Piso:" + this.nombrePiso);
+        System.out.println("Piso: " + this.numPiso);
+        System.out.println("Edificio: " + this.nombreEdif);
+        System.out.println("Sala: " + this.numSala);
     }
 
-    public String getHosp() {
-        return Hosp;
+    //getters y setters
+    public String getNombreHosp() {
+        return nombreHosp;
     }
 
-    public ArrayList<String> getListaHospPac() {
-        return ListaHospPac;
+    public void setNombreHosp(String nombreHosp) {
+        this.nombreHosp = nombreHosp;
     }
 
-    public void setHosp(String Hosp) {
-        this.Hosp = Hosp;
+    public String getNombrePiso() {
+        return nombrePiso;
     }
 
-    public void setListaPacHosp(ArrayList<String> ListaHospPac) {
-        this.ListaHospPac = ListaHospPac;
+    public void setNombrePiso(String nombrePiso) {
+        this.nombrePiso = nombrePiso;
+    }
+
+    public int getNumPiso() {
+        return numPiso;
+    }
+
+    public void setNumPiso(int numPiso) {
+        this.numPiso = numPiso;
+    }
+
+    public String getNombreEdif() {
+        return nombreEdif;
+    }
+
+    public void setNombreEdif(String nombreEdif) {
+        this.nombreEdif = nombreEdif;
+    }
+
+    public int getNumSala() {
+        return numSala;
+    }
+
+    public void setNumSala(int numSala) {
+        this.numSala = numSala;
     }
 
 }
