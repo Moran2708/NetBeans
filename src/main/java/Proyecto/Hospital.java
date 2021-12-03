@@ -1,14 +1,12 @@
 package Proyecto;
 
-import java.util.Scanner;
-
 public class Hospital {
 
-    Scanner s = new Scanner(System.in);
+    Leer Leer = new Leer();
 
     //Atributos
     private String nombreHosp;
-    private String nombrePiso;
+    private String nombreArea;
     private int numPiso;
     private String nombreEdif;
     private int numSala;
@@ -17,44 +15,43 @@ public class Hospital {
     public void Llenar_Datos_Hospital() {
         System.out.println("------------------REGISTRO HOSPITAL------------------");
         System.out.println("Digite el nombre del hospital");
-        this.nombreHosp = s.nextLine();
-        System.out.println("Digite el nombre del piso donde esta siendo atendido");
-        this.nombrePiso = s.nextLine();
+        this.nombreHosp = Leer.datoString();
+        System.out.println("Area donde esta siendo atendido");
+        this.nombreArea = Leer.datoString();
         System.out.println("Digite el nro. del piso donde esta siendo atendido");
-        this.numPiso = s.nextInt();
-        s.nextLine();
+        this.numPiso = Leer.pedirInt();
         System.out.println("Digite el nombre del edificio");
-        this.nombreEdif = s.nextLine();
+        this.nombreEdif = Leer.datoString();
         System.out.println("Digite el numero de la Sala");
-        this.numSala = s.nextInt();
+        this.numSala = Leer.pedirInt();
     }
 
     public void Llenar_Datos_Hospital_PMed() {
         System.out.println("------------------REGISTRO HOSPITAL------------------");
         System.out.println("Nombre del hospital");
-        this.nombreHosp = s.nextLine();
-        System.out.println("Nombre de Piso: ");
-        this.nombrePiso = s.nextLine();
+        this.nombreHosp = Leer.datoString();
+        System.out.println("Area : ");
+        this.nombreArea = Leer.datoString();
         System.out.println("Piso :");
-        this.numPiso = s.nextInt();
-        s.nextLine();
+        this.numPiso = Leer.pedirInt();
+
         System.out.println("Nombre del edificio");
-        this.nombreEdif = s.nextLine();
+        this.nombreEdif = Leer.datoString();
         System.out.println("Numero de la Sala");
-        this.numSala = s.nextInt();
+        this.numSala = Leer.pedirInt();
     }
 
     public void Mostrar_Datos_Hosp() {
-        System.out.println("Nombre del hospital: " + this.nombreHosp);
-        System.out.println("Nombre del piso donde fue atendido:" + this.nombrePiso);
-        System.out.println("Numero del pisp donde fue atendido: " + this.numPiso);
-        System.out.println("Nombre del edificio: " + this.nombreEdif);
+        System.out.println("Nombre del Hospital: " + this.nombreHosp);
+        System.out.println("Area donde fue atendido:" + this.nombreArea);
+        System.out.println("Numero del Piso donde fue atendido: " + this.numPiso);
+        System.out.println("Nombre del Edificio: " + this.nombreEdif);
         System.out.println("Numero de la Sala: " + this.numSala);
     }
-    
+
     public void Mostrar_Datos_Hosp_PMed() {
         System.out.println("Hospital: " + this.nombreHosp);
-        System.out.println("Nombre del Piso:" + this.nombrePiso);
+        System.out.println("Nombre del Area:" + this.nombreArea);
         System.out.println("Piso: " + this.numPiso);
         System.out.println("Edificio: " + this.nombreEdif);
         System.out.println("Sala: " + this.numSala);
@@ -69,12 +66,12 @@ public class Hospital {
         this.nombreHosp = nombreHosp;
     }
 
-    public String getNombrePiso() {
-        return nombrePiso;
+    public String getNombreArea() {
+        return nombreArea;
     }
 
-    public void setNombrePiso(String nombrePiso) {
-        this.nombrePiso = nombrePiso;
+    public void setNombreArea(String nombreArea) {
+        this.nombreArea = nombreArea;
     }
 
     public int getNumPiso() {

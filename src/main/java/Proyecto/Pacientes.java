@@ -1,11 +1,10 @@
 package Proyecto;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Pacientes {
 
-    Scanner s = new Scanner(System.in);
+    Leer Leer = new Leer();
 
     //Atributos
     private int NumCed;
@@ -31,30 +30,25 @@ public class Pacientes {
         String res = "S";
         System.out.println("----------------REGISTRO DE PACIENTE-----------------");
         System.out.println("Digite sun Nmro. de Cedula: ");
-        this.NumCed = s.nextInt();
-        //Limpieza de Buffer
-        s.nextLine();
+        this.NumCed = Leer.pedirInt();
         System.out.println("Digite su apellido Paterno: ");
-        this.Paterno = s.nextLine();
+        this.Paterno = Leer.datoString();
         System.out.println("Digite su apellido Materno: ");
-        this.Materno = s.nextLine();
+        this.Materno = Leer.datoString();
         System.out.println("Digite su Nombre: ");
-        this.Nombre = s.nextLine();
+        this.Nombre = Leer.datoString();
         System.out.println("Digite su Genero (F,M): ");
-        this.Genero = s.nextLine();
+        this.Genero = Leer.datoString();
         System.out.println("Digite su Fceha de Nacimiento (dd/mm/aaaa): ");
-        this.FechaNac = s.nextLine();
-        //Ubicacion de Internacion.
-        System.out.println("Digite el Hospital en el cual sera Internado: ");
-        this.UbicIntern = s.nextLine();
-        System.out.println("-----------------------------------------------------");
+        this.FechaNac = Leer.datoString();
         System.out.println("----------------------SINTOMAS-----------------------");
         do {
             System.out.println("Digite Sintomas del paciente: ");
-            ListaSint.add(s.nextLine());
+            ListaSint.add(Leer.datoString());
             System.out.println("Desea añadir mas sintomas? (S/N)");
-            res = s.nextLine();
+            res = Leer.datoString();
         } while (res.equalsIgnoreCase("S"));
+        System.out.println("-----------------------------------------------------");
         hosp.Llenar_Datos_Hospital();
     }
 

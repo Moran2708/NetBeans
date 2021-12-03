@@ -2,11 +2,9 @@ package Proyecto;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Operaciones_Medico {
 
-    Scanner s = new Scanner(System.in);
     List<Medico> ListaMed;
 
     public Operaciones_Medico() {
@@ -37,12 +35,13 @@ public class Operaciones_Medico {
         int sw = 0;
         for (Medico med : ListaMed) {
             if (med.getId() == Id) {
+                System.out.println("Medico encontado.");
+                System.out.println("-----------------------------------------------------");
                 sw = 1;
                 med.Mostrar_Medicos();
+            } else if (sw == 0) {
+                System.out.println("Ningun Medico con Nro de ID: " + Id);
             }
-        }
-        if (sw == 0) {
-            System.out.println("Ningun Medico con Nro de ID: " + Id);
         }
     }
 }

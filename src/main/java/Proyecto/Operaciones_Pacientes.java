@@ -2,11 +2,9 @@ package Proyecto;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Operaciones_Pacientes {
 
-    Scanner s = new Scanner(System.in);
     List<Pacientes> ListaPaciente;
 
     public Operaciones_Pacientes() {
@@ -29,21 +27,26 @@ public class Operaciones_Pacientes {
     public void Listado_De_Pacientes() {
         if (ListaPaciente.size() < 1) {
             System.out.println("No hay Pacientes Registrados");
-        }else{
+        } else {
             for (Pacientes paciente : ListaPaciente) {
                 paciente.Mostrar_Datos();
             }
         }
-        
+
     }
 
     //Pacientes por Genero
     public void Paciente_Genero() {
-        System.out.println("Digite el Genero para listar los pacientes: ");
-        String genero = s.nextLine();
-        for (Pacientes paciente : ListaPaciente) {
-            if (paciente.getGenero().equalsIgnoreCase(genero)) {
-                paciente.Mostrar_Datos();
+
+        if (ListaPaciente.size() < 1) {
+            System.out.println("No hay Ningun Paciente Registrado!!!");
+        } else {
+            System.out.println("Digite el Genero para listar los pacientes: ");
+            String genero = Leer.datoString();
+            for (Pacientes paciente : ListaPaciente) {
+                if (paciente.getGenero().equalsIgnoreCase(genero)) {
+                    paciente.Mostrar_Datos();
+                }
             }
         }
     }

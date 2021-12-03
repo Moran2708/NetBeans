@@ -1,18 +1,16 @@
 package Proyecto;
 
-import java.util.Scanner;
-
 public class Principal_Paciente {
 
     public static void main(String[] args) {
 
-        Scanner s = new Scanner(System.in);
+        Leer Leer = new Leer();
+
         boolean cont = true;
         int opc;
         //Instranciar objeto para llamar a los metodos
         Operaciones_Pacientes obj = new Operaciones_Pacientes();
         Operaciones_Medico med = new Operaciones_Medico();
-        Operaciones_Hospital hosp = new Operaciones_Hospital();
         do {
             System.out.println("------------------MENÚ DE OPCIONES-------------------");
             System.out.println("1-Registrar Medico");
@@ -24,8 +22,7 @@ public class Principal_Paciente {
             System.out.println("7-Buscar Paciente");
             System.out.println("8-Eliminar Paciente");
             System.out.println("9-Salir");
-            opc = s.nextInt();
-            s.nextLine();
+            opc = Leer.pedirInt();
             System.out.println("-----------------------------------------------------");
             switch (opc) {
                 case 1:
@@ -37,9 +34,14 @@ public class Principal_Paciente {
                     break;
 
                 case 3:
-                    System.out.println("Digite el Nro. de Id del Medico: ");
-                    int Id = s.nextInt();
-                    med.Buscar_Med(Id);
+                    if (med.ListaMed.size() < 1) {
+                        System.out.println("Ningun Medico Registrado.");
+                    } else {
+                        System.out.println("Digite el Nro. de Id del Medico: ");
+                        int Id = Leer.pedirInt();
+                        med.Buscar_Med(Id);
+                    }
+
                     break;
                 case 4:
                     obj.Registrar_Paciente();
@@ -54,15 +56,23 @@ public class Principal_Paciente {
                     break;
 
                 case 7:
-                    System.out.println("Digite el numero de cedula del paciente: ");
-                    int nc = s.nextInt();
-                    obj.Buscar_Pac(nc);
+                    if (obj.ListaPaciente.size() < 1) {
+                        System.out.println("Ningun Paciente Registrado.");
+                    } else {
+                        System.out.println("Digite el numero de cedula del paciente: ");
+                        int nc = Leer.pedirInt();
+                        obj.Buscar_Pac(nc);
+                    }
                     break;
 
                 case 8:
-                    System.out.println("Paciente a Eliminar: ");
-                    int pac = s.nextInt();
-                    obj.Eliminar_Paciente(pac);
+                    if (obj.ListaPaciente.size() < 1) {
+                        System.out.println("Ningun Paciente Registrado.");
+                    } else {
+                        System.out.println("Nro. de Paciente a Eliminar: ");
+                        int pac = Leer.pedirInt();
+                        obj.Eliminar_Paciente(pac);
+                    }
                     break;
 
                 default:

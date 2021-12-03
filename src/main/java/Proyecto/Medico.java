@@ -1,12 +1,10 @@
 package Proyecto;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Medico {
 
-    Scanner s = new Scanner(System.in);
-
+    Leer Leer = new Leer();
     //Atributos
     private int Id;
     private String Nombre;
@@ -23,16 +21,14 @@ public class Medico {
     public void Registrar_Medico() {
         System.out.println("---------------REGISTRAR NUEVO MEDICO---------------");
         System.out.println("Digite sun Nmro. de Id:  ");
-        this.Id = s.nextInt();
-        //Limpieza de Buffer
-        s.nextLine();
+        this.Id = Leer.pedirInt();
         System.out.println("Digite Apellido: ");
-        this.Apellido = s.nextLine();
+        this.Apellido = Leer.datoString();
         System.out.println("Digite Nombre:  ");
-        this.Nombre = s.nextLine();
+        this.Nombre = Leer.datoString();
         //Ubicacion de Internacion.
         System.out.println("Especialidad: ");
-        this.Espec = s.nextLine();
+        this.Espec = Leer.datoString();
         hosp.Llenar_Datos_Hospital_PMed();
     }
 
